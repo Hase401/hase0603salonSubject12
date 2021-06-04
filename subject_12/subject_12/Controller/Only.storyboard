@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="税抜金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-DN-eYg">
-                                <rect key="frame" x="86" y="123" width="69.5" height="21"/>
+                                <rect key="frame" x="86" y="123" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,6 +32,9 @@
                                 <rect key="frame" x="159" y="191" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setUserDefalutsEditingChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="hlC-pY-RX8"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-N9-2SD">
                                 <rect key="frame" x="184" y="267" width="46" height="30"/>
@@ -53,21 +56,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消費税率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzZ-CT-IWc">
-                                <rect key="frame" x="86" y="198" width="69.5" height="21"/>
+                                <rect key="frame" x="86" y="198" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="税込金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-QL-hOv">
-                                <rect key="frame" x="86" y="335" width="69.5" height="21"/>
+                                <rect key="frame" x="86" y="335" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-5b-GxY">
-                                <rect key="frame" x="185.5" y="335" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-5b-GxY">
+                                <rect key="frame" x="164" y="335" width="122" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="11" id="8Eh-6c-GW6"/>
+                                    <constraint firstAttribute="width" constant="122" id="8Eh-6c-GW6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -110,10 +113,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="b3l-QL-hOv" secondAttribute="bottom" constant="506" id="kVd-7o-jW7"/>
                             <constraint firstItem="kV2-uM-OOz" firstAttribute="top" secondItem="f8d-f9-woO" secondAttribute="bottom" constant="41" id="oph-HV-N7B"/>
                             <constraint firstItem="tVa-DN-eYg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="79" id="qsl-gS-30t"/>
-                            <constraint firstItem="3tR-5b-GxY" firstAttribute="leading" secondItem="b3l-QL-hOv" secondAttribute="trailing" constant="30" id="t8j-XE-NXg"/>
+                            <constraint firstItem="3tR-5b-GxY" firstAttribute="leading" secondItem="b3l-QL-hOv" secondAttribute="trailing" constant="8" id="t8j-XE-NXg"/>
                             <constraint firstItem="tVa-DN-eYg" firstAttribute="firstBaseline" secondItem="FgR-3k-QA1" secondAttribute="firstBaseline" id="vMe-b1-MW9"/>
                             <constraint firstItem="rzZ-CT-IWc" firstAttribute="trailing" secondItem="b3l-QL-hOv" secondAttribute="trailing" id="xKg-jO-ae4"/>
-                            <constraint firstItem="RHP-jo-heX" firstAttribute="leading" secondItem="3tR-5b-GxY" secondAttribute="trailing" constant="97" id="y8X-YE-r7p"/>
+                            <constraint firstItem="RHP-jo-heX" firstAttribute="leading" secondItem="3tR-5b-GxY" secondAttribute="trailing" constant="7.5" id="y8X-YE-r7p"/>
                             <constraint firstItem="f8d-f9-woO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yUp-sl-Scg"/>
                             <constraint firstItem="f8d-f9-woO" firstAttribute="leading" secondItem="kV2-uM-OOz" secondAttribute="leading" id="yxy-gK-o4Q"/>
                         </constraints>
@@ -126,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="94"/>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
     <resources>
