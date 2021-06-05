@@ -68,10 +68,6 @@
 		BAD0CB9B26682A1100984CF6 /* subject_12 */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
-				BA29EEC0266BA9B50076F3F2 /* Model */,
->>>>>>> AutoLayout
 				BAD0CBB126682A8700984CF6 /* View */,
 				BAD0CBB026682A7A00984CF6 /* Controller */,
 				BAD0CBB326682B1600984CF6 /* Only.storyboard */,
