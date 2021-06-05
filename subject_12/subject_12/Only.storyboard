@@ -13,7 +13,7 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="ViewController" customModule="subject_12" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc" customClass="TaxView" customModule="subject_12" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -115,16 +115,19 @@
                             <constraint firstItem="rzZ-CT-IWc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xE1-kC-wC3"/>
                             <constraint firstItem="tVa-DN-eYg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xyN-I6-WOM"/>
                         </constraints>
+                        <connections>
+                            <outlet property="taxLabel" destination="3tR-5b-GxY" id="jBJ-4h-oVH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="freeTaxYenTextField" destination="f8d-f9-woO" id="Y3l-zl-Eo1"/>
                         <outlet property="taxRateTextField" destination="kV2-uM-OOz" id="dqt-vt-12m"/>
-                        <outlet property="taxYenLabelCalculated" destination="3tR-5b-GxY" id="EoI-9M-8aP"/>
+                        <outlet property="taxView" destination="5EZ-qb-Rvc" id="bVs-XG-WfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33.75" y="93.75"/>
+            <point key="canvasLocation" x="172" y="88"/>
         </scene>
     </scenes>
     <resources>
