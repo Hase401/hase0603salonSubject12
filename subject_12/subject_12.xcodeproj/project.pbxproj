@@ -56,7 +56,6 @@
 		BAD0CB9B26682A1100984CF6 /* subject_12 */ = {
 			isa = PBXGroup;
 			children = (
-				BAD0CBB226682A8E00984CF6 /* Modal */,
 				BAD0CBB126682A8700984CF6 /* View */,
 				BAD0CBB026682A7A00984CF6 /* Controller */,
 				BAD0CB9C26682A1100984CF6 /* AppDelegate.swift */,
@@ -82,13 +81,6 @@
 				BAD0CBA526682A1800984CF6 /* Assets.xcassets */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BAD0CBB226682A8E00984CF6 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
