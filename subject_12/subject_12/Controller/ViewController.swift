@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     // modelにするべきところ？userDefalutsの使い方とロードの仕方
 //    var taxRateDate: Int?
+    private static let taxRateKey = "taxRate"
     
     @IBOutlet weak var freeTaxYenTextField: UITextField!
     @IBOutlet weak var taxRateTextField: UITextField!
@@ -21,28 +22,20 @@ class ViewController: UIViewController {
         freeTaxYenTextField.keyboardType = .numberPad
         taxRateTextField.keyboardType = .numberPad
         
-        if let taxRate = UserDefaults.standard.string(forKey: "taxRate") {
+        if let taxRate = UserDefaults.standard.string(forKey: Self.taxRateKey) {
             taxRateTextField.text = taxRate
         }
     }
 
     @IBAction func calculateTaxYenButtonTapped(_ sender: UIButton) {
-        let freeTaxYen = Float(freeTaxYenTextField.text!) ?? 0
+        let freeTaxYen = Int(freeTaxYenTextField.text!) ?? 0
         let taxRate = Float(taxRateTextField.text!) ?? 0
-        let taxYen: Float = freeTaxYen * ( taxRate * 0.01 + 1 )
-        let resultNumber = Int(taxYen)
-        
-        taxYenLabelCalculated.text = "\(resultNumber)"
-        
-        
-        //　【解決】オプショナル型IntからString型に変換しようとしていなのでこれだとイニシャライザがないと表示されてしまう。"\()"ならオプショナル型で表示される
-//        taxYenLabelCalculated.text = String(resultNumber)
+        let resultYen = freeTaxYen + Int(Float(freeTaxYen) * taxRate * 0.01)
+        taxYenLabelCalculated.text = String(resultYen)
     }
     
     @IBAction func setUserDefalutsEditingChanged(_ sender: UITextField) {
-//        【メモ】 古いやり方
-//        NSUserDefaults.resetStandardUserDefaults().setOject(taxYenLabelCalculated.text, forkey: "taxYen1")
-        UserDefaults.standard.set(taxRateTextField.text, forKey: "taxRate")
+        UserDefaults.standard.set(taxRateTextField.text, forKey: Self.taxRateKey)
     }
 }
 
