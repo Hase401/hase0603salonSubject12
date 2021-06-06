@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA29EEC2266BA9D00076F3F2 /* TaxYenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC1266BA9D00076F3F2 /* TaxYenModel.swift */; };
 		BA29EEC4266BAA6F0076F3F2 /* TaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC3266BAA6F0076F3F2 /* TaxView.swift */; };
+		BA29EEC9266C3BF90076F3F2 /* TaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */; };
 		BAD0CB9D26682A1100984CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CB9C26682A1100984CF6 /* AppDelegate.swift */; };
 		BAD0CB9F26682A1100984CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CB9E26682A1100984CF6 /* SceneDelegate.swift */; };
 		BAD0CBA126682A1100984CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CBA026682A1100984CF6 /* ViewController.swift */; };
@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		BA29EEC1266BA9D00076F3F2 /* TaxYenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxYenModel.swift; sourceTree = "<group>"; };
 		BA29EEC3266BAA6F0076F3F2 /* TaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxView.swift; sourceTree = "<group>"; };
+		BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxModel.swift; sourceTree = "<group>"; };
 		BAD0CB9926682A1100984CF6 /* subject_12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = subject_12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0CB9C26682A1100984CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD0CB9E26682A1100984CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +42,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA29EEC0266BA9B50076F3F2 /* Model */ = {
+		BA29EEC6266C350F0076F3F2 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				BA29EEC1266BA9D00076F3F2 /* TaxYenModel.swift */,
 			);
-			path = Model;
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		BA29EEC7266C36F00076F3F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BAD0CB9026682A1100984CF6 = {
@@ -54,6 +63,7 @@
 			children = (
 				BAD0CB9B26682A1100984CF6 /* subject_12 */,
 				BAD0CB9A26682A1100984CF6 /* Products */,
+				BA29EEC6266C350F0076F3F2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +78,7 @@
 		BAD0CB9B26682A1100984CF6 /* subject_12 */ = {
 			isa = PBXGroup;
 			children = (
+				BA29EEC7266C36F00076F3F2 /* Models */,
 				BAD0CBB126682A8700984CF6 /* View */,
 				BAD0CBB026682A7A00984CF6 /* Controller */,
 				BAD0CBB326682B1600984CF6 /* Only.storyboard */,
@@ -168,8 +179,8 @@
 			files = (
 				BA29EEC4266BAA6F0076F3F2 /* TaxView.swift in Sources */,
 				BAD0CBA126682A1100984CF6 /* ViewController.swift in Sources */,
+				BA29EEC9266C3BF90076F3F2 /* TaxModel.swift in Sources */,
 				BAD0CB9D26682A1100984CF6 /* AppDelegate.swift in Sources */,
-				BA29EEC2266BA9D00076F3F2 /* TaxYenModel.swift in Sources */,
 				BAD0CB9F26682A1100984CF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
