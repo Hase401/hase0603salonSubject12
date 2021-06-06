@@ -10,46 +10,34 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet private var taxView: TaxView!
-    private(set) lazy var taxModel = TaxModel()
-    // modelにするべきところ？userDefalutsの使い方とロードの仕方
-//    var taxRateDate: Int?
-    private static let taxRateKey = "taxRate"
-    
-    @IBOutlet weak var freeTaxYenTextField: UITextField!
-    @IBOutlet weak var taxRateTextField: UITextField!
+
+    @objc private let taxCalculator = TaxCalculator()
+    private let taxRateRepository = TaxRateRepository()
+
+    private var observations = Set<NSKeyValueObservation>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        freeTaxYenTextField.keyboardType = .numberPad
-        taxRateTextField.keyboardType = .numberPad
-        
-        if let taxRate = UserDefaults.standard.string(forKey: Self.taxRateKey) {
-            taxRateTextField.text = taxRate
-        }
-        
-        // TaxModelの監視
-        taxModel.notificationCenter.addObserver(self,
-                                                selector: #selector(self.handleTaxChange(_:)),
-                                                name: .init(NSNotification.Name(rawValue: TaxModel.notificationName)),
-                                                object: nil)
-    }
-    
-    // modelが変更しているか検知し、もし変更されていたらViewに描写を依頼する
-    @objc func handleTaxChange(_ notification: NSNotification) {
-        if let taxYen = notification.object as? Int {   //元々Any?型
-            // Viewに描画処理を依頼する
-            taxView.render(taxYen: taxYen)
-        }
-    }
 
-    @IBAction func calculateTaxYenButtonTapped(_ sender: UIButton) {
-        let freeTaxYen = Int(freeTaxYenTextField.text!) ?? 0
-        let taxRate = Float(taxRateTextField.text!) ?? 0
-        taxModel.calculateTaxYen(freeTaxYen, taxRate)
+        taxView.setup(taxRateTextFieldEditingChanged: { [weak self] in
+            guard let taxRate = Double($0) else { return }
+            self?.taxRateRepository.save(taxRate: taxRate)
+        })
+
+        taxView.taxRateText = String(taxRateRepository.load())
+        
+        observations.insert(
+            observe(\.taxCalculator.taxYen, options: [.old, .new], changeHandler: { [weak self] _, change in
+                guard let taxYen = change.newValue else { return }
+                // Viewに描画処理を依頼する
+                self?.taxView.render(taxYen: taxYen)
+            })
+        )
     }
     
-    @IBAction func setUserDefalutsEditingChanged(_ sender: UITextField) {
-        UserDefaults.standard.set(taxRateTextField.text, forKey: Self.taxRateKey)
+    @IBAction func calculateTaxYenButtonTapped(_ sender: UIButton) {
+        let freeTaxYen = Int(taxView.freeTexYenText ?? "") ?? 0
+        let taxRate = Float(taxView.taxRateText ?? "") ?? 0
+        taxCalculator.calculateTaxYen(freeTaxYen: freeTaxYen, taxRate: taxRate)
     }
 }
-
