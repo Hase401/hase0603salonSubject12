@@ -13,8 +13,10 @@ class TaxView: UIView {
     @IBOutlet private weak var taxLabel: UILabel!
     
     @IBOutlet private weak var freeTaxYenTextField: UITextField! {
-        // 【疑問 didSetとViewDidLoadの使い方の場面わけができるように、メリデメわかるように
+        // 【疑問】 didSetとViewDidLoadの使い方の場面わけができるように、メリデメわかるように
+        // 【回答】Viewにはライフサイクルがないから、textFieldが選択された後に次の処理を実行する
         didSet {
+            // 【メモ】プロバティ変更後に実行する　→　選択するだけでも変更されたことになる！？
             freeTaxYenTextField.keyboardType = .numberPad
         }
     }
@@ -29,6 +31,8 @@ class TaxView: UIView {
         get {
             freeTaxYenTextField.text ?? ""
         }
+        // 【疑問】なぜ、freeTaxYenTextには変更に対応するsetを設定していないのか？
+        // 【推測】freeTaxYenTextFieldの変更に対応するメソッドがないのでsetする必要がない？
     }
     
     var taxRateText: String? {
@@ -36,7 +40,6 @@ class TaxView: UIView {
             taxRateTextField.text ?? ""
         }
         
-        // 【疑問】setでnewValueとはどういうこと？
         set {
             taxRateTextField.text = newValue
         }
@@ -44,18 +47,20 @@ class TaxView: UIView {
     
     private var taxRateTextFieldEditingChangedHandler: (String) -> Void = { _ in }
     
-    //このsetupをcontrollerのviewDidLoadで呼ぶ
+    // 【メモ】このsetupをcontrollerのviewDidLoadで呼ぶ
     func setup(taxRateTextFieldEditingChanged: @escaping (String) -> Void) {
         self.taxRateTextFieldEditingChangedHandler = taxRateTextFieldEditingChanged
     }
     
+    // controllerからViewを変更しろという通知が来たら、実行するメソッド
     public func render(taxYen: Int){
         taxLabel.text = String(taxYen)
     }
     
-    
     @IBAction func taxRateTextFieldEditingChanged(_ sender: UITextField) {
-        //【疑問】この引数は何を表している？
+        // taxRateTextFieldREditingChangedHandlerのクロージャとしての処理としてString型を渡してあげている (nilの可能性がある)
+        // 引数をString型として渡し。UserDefaultsとして使用する (クロージャの中身の処理内容)
         taxRateTextFieldEditingChangedHandler(sender.text ?? "")
+        print(sender.text)
     }
 }
