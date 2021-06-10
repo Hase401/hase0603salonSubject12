@@ -9,9 +9,10 @@ import Foundation
 
 class TaxCalculator: NSObject {
     
+// 【MVC順番4】taxYenの変更を通知する
     @objc dynamic var taxYen: Int = 0
     
-    // modelとなっているtaxYenの計算処理
+// 【MVC順番3】taxYenの計算処理する
     func calculateTaxYen(_ freeTaxYen: Int, _ taxRate: Float) {
         taxYen = freeTaxYen + Int(Float(freeTaxYen) * taxRate * 0.01)
     }

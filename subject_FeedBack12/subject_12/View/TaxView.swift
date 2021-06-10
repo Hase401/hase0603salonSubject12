@@ -13,10 +13,10 @@ class TaxView: UIView {
     @IBOutlet private weak var taxLabel: UILabel!
     
     @IBOutlet private weak var freeTaxYenTextField: UITextField! {
-        // 【疑問】 didSetとViewDidLoadの使い方の場面わけができるように、メリデメわかるように
-        // 【回答】Viewにはライフサイクルがないから、textFieldが選択された後に次の処理を実行する
+        // 【疑問】didSetとViewDidLoadの使い方の場面わけができるように、メリデメわかるように
+        // 【推測】Viewにはライフサイクルがないから、textFieldが選択された後に次の処理を実行する
+        // 【メモ】didSetはプロバティ変更後に実行する　→　選択するだけでも変更されたことになる
         didSet {
-            // 【メモ】プロバティ変更後に実行する　→　選択するだけでも変更されたことになる！？
             freeTaxYenTextField.keyboardType = .numberPad
         }
     }
@@ -28,11 +28,10 @@ class TaxView: UIView {
     }
     
     var freeTaxYenText: String? {
+        // 値の返却
         get {
             freeTaxYenTextField.text ?? ""
         }
-        // 【疑問】なぜ、freeTaxYenTextには変更に対応するsetを設定していないのか？
-        // 【推測】freeTaxYenTextFieldの変更に対応するメソッドがないのでsetする必要がない？
     }
     
     var taxRateText: String? {
@@ -40,6 +39,7 @@ class TaxView: UIView {
             taxRateTextField.text ?? ""
         }
         
+        // 値の更新
         set {
             taxRateTextField.text = newValue
         }
@@ -47,20 +47,23 @@ class TaxView: UIView {
     
     private var taxRateTextFieldEditingChangedHandler: (String) -> Void = { _ in }
     
-    // 【メモ】このsetupをcontrollerのviewDidLoadで呼ぶ
+    // setupをcontrollerのviewDidLoadで呼ぶ
     func setup(taxRateTextFieldEditingChanged: @escaping (String) -> Void) {
         self.taxRateTextFieldEditingChangedHandler = taxRateTextFieldEditingChanged
     }
     
-    // controllerからViewを変更しろという通知が来たら、実行するメソッド
+// 【MVC順番７】controllerからViewを変更しろという通知が来たら、描写処理する
     public func render(taxYen: Int){
         taxLabel.text = String(taxYen)
     }
     
+//【UserDefaults順番①】ViewControllerではなく、Viewとして入力を受ける
     @IBAction func taxRateTextFieldEditingChanged(_ sender: UITextField) {
         // taxRateTextFieldREditingChangedHandlerのクロージャとしての処理としてString型を渡してあげている (nilの可能性がある)
         // 引数をString型として渡し。UserDefaultsとして使用する (クロージャの中身の処理内容)
+// 【UserDefaults順番②】ControllerにTaxRateRepositroyにUserDefaultsとして保存する処理を依頼している？それともすでにデータ処理している？
+        print("クロージャ実行前　sender.text: " + sender.text!)
         taxRateTextFieldEditingChangedHandler(sender.text ?? "")
-        print(sender.text)
+        print("クロージャ実行後")
     }
 }
