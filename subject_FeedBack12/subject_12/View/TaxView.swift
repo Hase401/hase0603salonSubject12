@@ -66,4 +66,5 @@ class TaxView: UIView {
         taxRateTextFieldEditingChangedHandler(sender.text ?? "")
         print("クロージャ実行後")
     }
+    
 }

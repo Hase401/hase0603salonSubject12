@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="taxRateTextFieldEditingChanged:" destination="5EZ-qb-Rvc" eventType="editingDidEnd" id="nRS-a3-n2w"/>
+                                    <action selector="taxRateTextFieldEditingChanged:" destination="5EZ-qb-Rvc" eventType="editingChanged" id="Lja-FH-kwr"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-N9-2SD">
