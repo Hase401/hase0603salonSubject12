@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		BA29EEC4266BAA6F0076F3F2 /* TaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC3266BAA6F0076F3F2 /* TaxView.swift */; };
-		BA29EEC9266C3BF90076F3F2 /* TaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */; };
+		BA29EEC9266C3BF90076F3F2 /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29EEC8266C3BF90076F3F2 /* TaxCalculator.swift */; };
 		BAD0CB9D26682A1100984CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CB9C26682A1100984CF6 /* AppDelegate.swift */; };
 		BAD0CB9F26682A1100984CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CB9E26682A1100984CF6 /* SceneDelegate.swift */; };
 		BAD0CBA126682A1100984CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0CBA026682A1100984CF6 /* ViewController.swift */; };
 		BAD0CBA626682A1800984CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD0CBA526682A1800984CF6 /* Assets.xcassets */; };
 		BAD0CBA926682A1800984CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0CBA726682A1800984CF6 /* LaunchScreen.storyboard */; };
 		BAD0CBB426682B1600984CF6 /* Only.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0CBB326682B1600984CF6 /* Only.storyboard */; };
+		E5DBC6B1266D7FBA00BE177A /* TaxRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DBC6B0266D7FBA00BE177A /* TaxRateRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA29EEC1266BA9D00076F3F2 /* TaxYenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxYenModel.swift; sourceTree = "<group>"; };
 		BA29EEC3266BAA6F0076F3F2 /* TaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxView.swift; sourceTree = "<group>"; };
-		BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxModel.swift; sourceTree = "<group>"; };
+		BA29EEC8266C3BF90076F3F2 /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
 		BAD0CB9926682A1100984CF6 /* subject_12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = subject_12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0CB9C26682A1100984CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD0CB9E26682A1100984CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		BAD0CBA826682A1800984CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD0CBAA26682A1800984CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD0CBB326682B1600984CF6 /* Only.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Only.storyboard; sourceTree = "<group>"; };
+		E5DBC6B0266D7FBA00BE177A /* TaxRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 		BA29EEC7266C36F00076F3F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BA29EEC8266C3BF90076F3F2 /* TaxModel.swift */,
+				BA29EEC8266C3BF90076F3F2 /* TaxCalculator.swift */,
+				E5DBC6B0266D7FBA00BE177A /* TaxRateRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,7 +182,8 @@
 			files = (
 				BA29EEC4266BAA6F0076F3F2 /* TaxView.swift in Sources */,
 				BAD0CBA126682A1100984CF6 /* ViewController.swift in Sources */,
-				BA29EEC9266C3BF90076F3F2 /* TaxModel.swift in Sources */,
+				BA29EEC9266C3BF90076F3F2 /* TaxCalculator.swift in Sources */,
+				E5DBC6B1266D7FBA00BE177A /* TaxRateRepository.swift in Sources */,
 				BAD0CB9D26682A1100984CF6 /* AppDelegate.swift in Sources */,
 				BAD0CB9F26682A1100984CF6 /* SceneDelegate.swift in Sources */,
 			);

@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="setUserDefalutsEditingChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="hlC-pY-RX8"/>
+                                    <action selector="taxRateTextFieldEditingChanged:" destination="5EZ-qb-Rvc" eventType="editingChanged" id="XTE-hC-ElR"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-N9-2SD">
@@ -116,12 +116,12 @@
                             <constraint firstItem="tVa-DN-eYg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xyN-I6-WOM"/>
                         </constraints>
                         <connections>
+                            <outlet property="freeTaxYenTextField" destination="f8d-f9-woO" id="lze-mP-drn"/>
                             <outlet property="taxLabel" destination="3tR-5b-GxY" id="jBJ-4h-oVH"/>
+                            <outlet property="taxRateTextField" destination="kV2-uM-OOz" id="liV-5B-8eL"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="freeTaxYenTextField" destination="f8d-f9-woO" id="Y3l-zl-Eo1"/>
-                        <outlet property="taxRateTextField" destination="kV2-uM-OOz" id="dqt-vt-12m"/>
                         <outlet property="taxView" destination="5EZ-qb-Rvc" id="bVs-XG-WfC"/>
                     </connections>
                 </viewController>
